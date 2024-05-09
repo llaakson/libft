@@ -6,7 +6,7 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 12:46:25 by llaakson          #+#    #+#             */
-/*   Updated: 2024/05/08 14:45:23 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:14:49 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		j;
 	char	*trimmed;
 
+	if (!set || !s1)
+		return (NULL);
 	i = 0;
 	j = ft_strlen(s1) - 1;
 	while (ft_strchr(set, s1[i]) && i <= j)
 		++i;
+	if (i > j)
+		return (ft_strdup(s1 + j + 1));
 	while (ft_strchr(set, s1[j]) && j >= 0)
 		--j;
 	trimmed = malloc(sizeof(char) * (j - i + 2));

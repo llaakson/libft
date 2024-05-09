@@ -6,27 +6,31 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 17:48:10 by llaakson          #+#    #+#             */
-/*   Updated: 2024/04/28 21:48:48 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/09 16:10:16 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	counter(int nb)
+static int	counter(int nb)
 {
 	int	i;
 
-	i = 1;
-	while (nb /= 10)
+	i = 0;
+	if (nb == 0)
+		i++;
+	while (nb != 0)
+	{
+		nb /= 10;
 		++i;
+	}
 	return (i);
 }
 
 char	*ft_itoa(int nb)
 {
-	char	*str;
-	size_t	a;
-	size_t	i;
+	char		*str;
+	size_t		a;
 	long int	l;
 
 	l = nb;
@@ -39,11 +43,10 @@ char	*ft_itoa(int nb)
 	str = (char *)malloc(sizeof(char) * (a + 1));
 	if (str == NULL)
 		return (NULL);
-	i = a;
-	str[i] = '\0';
-	while (--i)
+	str[a] = '\0';
+	while (--a)
 	{
-		str[i] = (l % 10 + '0');
+		str[a] = (l % 10 + '0');
 		l = l / 10;
 	}
 	if (nb < 0)

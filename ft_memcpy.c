@@ -6,7 +6,7 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:16:56 by llaakson          #+#    #+#             */
-/*   Updated: 2024/04/24 10:54:46 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:50:04 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	char_dst = (char *) dst;
 	char_src = (char *) src;
-	if (dst == NULL)
+	if (src == NULL && dst == NULL)
 		return (NULL);
 	i = 0;
 	while (i < n)

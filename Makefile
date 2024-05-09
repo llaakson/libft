@@ -6,7 +6,7 @@
 #    By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/03 14:22:44 by llaakson          #+#    #+#              #
-#    Updated: 2024/05/07 20:18:33 by llaakson         ###   ########.fr        #
+#    Updated: 2024/05/09 18:28:53 by llaakson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ SOURCES =	ft_strlen.c \
 			ft_split.c \
 
 BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-		ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 		  
 
 OBJECTS = $(SOURCES:.c=.o)

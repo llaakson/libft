@@ -6,7 +6,7 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 18:07:23 by llaakson          #+#    #+#             */
-/*   Updated: 2024/05/07 20:13:54 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/09 21:48:14 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -17,6 +17,25 @@
 #include <errno.h>
 #include <unistd.h>
 #include "libft.h"
+
+void *upper_lst(void *content) 
+{
+	size_t	i;
+	char	*str;
+
+	str = ft_strdup((char*)content);
+	i = 0;
+	while(str[i]) {
+		str[i] = ft_toupper(str[i]);
+		i++;
+	}
+	return (str);
+}
+
+void print_list_elt(void *content) 
+{
+	printf("%s\n", content);
+}
 
 void delete(void *content)
 {
@@ -62,16 +81,29 @@ int main()
 	ft_lstadd_back(list, ft_lstnew(char3));
 	print_list(*list);
 
-	ft_lstdelone(*list + 1, &delete);
+	/*ft_lstdelone(*list + 1, &delete);
 	printf("ft_lstdelone:\n");
-	print_list(*list);
+	print_list(*list);*/
 						
-	ft_lstadd_front(list, ft_lstnew(char3));
-	print_list(*list);
+	/*ft_lstadd_front(list, ft_lstnew(char3));
+	print_list(*list);*/
 
 	/*ft_lstclear(&first, delete);
 	printf("ft_lstclear:\n");
 	print_list(*list);*/
 
+	ft_lstiter(*list, &print_list_elt);
+   	write(1, "\n", 1);
+
+	/*ft_lstiter(*list, upper_lst);
+	print_list(*list);
+	write(1, "\n", 1);*/
+	
+	//t_list *new_lstmap;
+	//t_list **final = &new_lstmap;
+	
+	printf("LSTMAP\n");
+	t_list *new_lstmap = ft_lstmap(first, &upper_lst, &free);
+	print_list(new_lstmap);
 
 }
