@@ -6,11 +6,9 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 07:24:55 by llaakson          #+#    #+#             */
-/*   Updated: 2024/04/24 11:20:51 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/10 23:02:51 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_tolower(int c)
 {

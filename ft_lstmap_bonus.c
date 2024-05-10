@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 17:50:57 by llaakson          #+#    #+#             */
-/*   Updated: 2024/05/09 21:43:32 by llaakson         ###   ########.fr       */
+/*   Created: 2024/05/10 22:37:57 by llaakson          #+#    #+#             */
+/*   Updated: 2024/05/10 22:38:00 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{	
-	printf("start\n");	
-	t_list *newlist;
-	t_list *returnlist;
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*newlist;
+	t_list	*returnlist;
+	void	*temp;
 
 	if (!lst || !f || !del)
 		return (NULL);
-	newlist = ft_lstnew(f(lst->content));
-	if (!newlist)
-		return (NULL);
-	returnlist = newlist;
-	lst = lst->next;
-	printf("1\n");
+	returnlist = NULL;
 	while (lst)
 	{
-		newlist->next = ft_lstnew(f(lst->content));
-		printf("2\n");
-		if (!newlist->next)
+		temp = f(lst->content);
+		newlist = ft_lstnew(temp);
+		if (!newlist)
 		{
-			ft_lstclear(&newlist, del);
-			return (NULL);
+			del(temp);
+			ft_lstclear(&returnlist, (*del));
+			return (returnlist);
 		}
-		newlist = newlist->next;
+		ft_lstadd_back(&returnlist, newlist);
 		lst = lst->next;
 	}
-	newlist->next = NULL;
 	return (returnlist);
 }

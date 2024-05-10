@@ -6,7 +6,7 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:07:27 by llaakson          #+#    #+#             */
-/*   Updated: 2024/05/09 20:59:28 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/10 21:04:45 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int main(void)
 	char	isalnum1 = ' ';
 	printf("--------ISAlNUM--------\n");
 	printf("ft_isalnum: %d\n", ft_isalnum(isalnum1));
-;	printf("isalnum: %d \n", isalnum(isalnum1));
+	printf("isalnum: %d \n", isalnum(isalnum1));
 
 	printf("--------ISASCII--------\n");
 	printf("ft_isascii: %d\n", ft_isascii(isalpha1));
@@ -102,9 +102,19 @@ int main(void)
 
 	printf("--------ATOI--------\n");
 	char atoistring[] = "    -2147389";
+	char *gigastring = "493443433535351111111111";
+	char *gigastring1 = "-493443433535351111111111";
+	char *gigastring2 = "-214738954";
 	printf("ft_atoi:%d\n", ft_atoi(atoistring));
+	printf("ft_atoi:%d\n", ft_atoi(gigastring));
+	printf("ft_atoi:%d\n", ft_atoi(gigastring1));
+	printf("ft_atoi:%d\n", ft_atoi(gigastring2));
+	puts("---");
 	printf("atoi:%d\n", atoi(atoistring));
-	
+	printf("atoi:%d\n", atoi(gigastring));
+	printf("atoi:%d\n", atoi(gigastring1));
+	printf("atoi:%d\n", atoi(gigastring2));
+
 	printf("--------STRLCPY--------\n");
 	char source[] = "123456789";
 	char destination[20];

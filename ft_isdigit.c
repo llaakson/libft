@@ -6,15 +6,13 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 09:26:12 by llaakson          #+#    #+#             */
-/*   Updated: 2024/04/23 12:29:24 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/10 22:48:11 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isdigit(int a)
+int	ft_isdigit(int c)
 {
-	if (a >= '0' && a <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }

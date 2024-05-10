@@ -6,7 +6,7 @@
 #    By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/03 14:22:44 by llaakson          #+#    #+#              #
-#    Updated: 2024/05/09 18:28:53 by llaakson         ###   ########.fr        #
+#    Updated: 2024/05/10 22:39:00 by llaakson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,23 +41,31 @@ SOURCES =	ft_strlen.c \
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 			ft_split.c \
 
-BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+BONUS	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c \
+		ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c \
 		  
+HEADF	=	libft.h
 
-OBJECTS = $(SOURCES:.c=.o)
+OBJECTS = $(SOURCES:%.c=%.o)
 
-OBJECTSBONUS = $(BONUS:.c=.o)
+OBJECTSBONUS = $(BONUS:%.c=%.o)
 
-CFLAGS += -Wall -Werror -Wextra
+CC	=	cc
+CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	ar	-r	$(NAME) $(OBJECTS)
+%.o:	%.c	$(HEADF)
+	$(CC)	$(CFLAGS)	-c	$<	-o	$@
 
-bonus: $(NAME) $(OBJECTSBONUS)
-	ar	-r $(NAME)	$(OBJECTSBONUS)
+$(NAME): $(OBJECTS)
+	ar	-rcs	$(NAME) $(OBJECTS)
+
+bonus: .bonus
+
+.bonus: $(OBJECTS) $(OBJECTSBONUS)
+	ar	-rcs $(NAME) $(OBJECTS)	$(OBJECTSBONUS)
+	@touch .bonus
 
 clean:
 	rm -f $(OBJECTS) $(OBJECTSBONUS)
@@ -67,4 +75,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

@@ -6,15 +6,13 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:12:15 by llaakson          #+#    #+#             */
-/*   Updated: 2024/04/24 10:43:03 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/10 22:49:27 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isprint(int a)
+int	ft_isprint(int c)
 {
-	if (a >= 32 && a <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

@@ -6,19 +6,19 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:40:16 by llaakson          #+#    #+#             */
-/*   Updated: 2024/05/09 17:13:29 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/10 23:16:53 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(const char *s1)
 {
 	char	*source;
 	char	*destination;
 	int		i;
 
-	source = (char *)src;
+	source = (char *)s1;
 	destination = malloc (sizeof(char) * (ft_strlen(source) + 1));
 	if (destination == NULL)
 		return (NULL);

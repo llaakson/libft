@@ -6,7 +6,7 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:38:05 by llaakson          #+#    #+#             */
-/*   Updated: 2024/04/22 12:37:03 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/10 23:10:50 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,28 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int				sign;
+	long long int	result;
+	long long int	prev;
 
 	sign = 1;
 	result = 0;
-	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
-		++i;
-	if (str[i] == '-' || str[i] == '+' )
+	while ((*str >= 9 && *str <= 13) || (*str == 32))
+		str++;
+	if (*str == '-' || *str == '+' )
 	{
-		if (str[i] == '-')
+		if (*str == '-')
 			sign = -sign;
-		++i;
+		str++;
 	}
-	while ((str[i] >= '0' && str[i] <= '9'))
+	while (*str >= '0' && *str <= '9')
 	{
-		result = result * 10;
-		result += str[i] - '0';
-		++i;
+		prev = result * 10 + *str++ - 48;
+		if (prev / 10 != result && sign == -1)
+			return (0);
+		if (prev / 10 != result && sign == 1)
+			return (-1);
+		result = prev;
 	}
 	return (result * sign);
 }

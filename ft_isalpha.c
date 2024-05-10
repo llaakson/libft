@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 08:34:35 by llaakson          #+#    #+#             */
-/*   Updated: 2024/04/23 11:22:45 by llaakson         ###   ########.fr       */
+/*   Created: 2024/05/10 23:33:41 by llaakson          #+#    #+#             */
+/*   Updated: 2024/05/10 23:33:58 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalpha(int a)
+int	ft_isalpha(int c)
 {
-	if ((a >= 'A' && a <= 'Z') || (a >= 'a' && a <= 'z'))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 18:07:23 by llaakson          #+#    #+#             */
-/*   Updated: 2024/05/09 22:11:20 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:06:38 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -103,7 +103,7 @@ int main()
 	//t_list **final = &new_lstmap;
 	
 	printf("LSTMAAP\n");
-	t_list *new_lstmap = ft_lstmap(first, &upper_lst, &free);
+	t_list *new_lstmap = ft_lstmap(first, &upper_lst, &delete);
 	print_list(new_lstmap);
 
 }
