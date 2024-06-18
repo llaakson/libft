@@ -6,7 +6,7 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 16:45:34 by llaakson          #+#    #+#             */
-/*   Updated: 2024/04/30 19:54:07 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/14 14:37:25 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (s && f)
 	{
-		f(i, &s[i]);
-		++i;
+		while (s[i] != '\0')
+		{
+			f(i, &s[i]);
+			++i;
+		}
 	}
 }

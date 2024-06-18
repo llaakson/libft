@@ -6,7 +6,7 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 13:47:07 by llaakson          #+#    #+#             */
-/*   Updated: 2024/05/10 23:01:23 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/14 14:15:21 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	src1 = (char *)src;
 	s = ft_strlen(src);
+	if (!dst && !dstsize)
+		return (ft_strlen(src));
 	i = ft_strlen(dst);
 	if (dstsize > i)
 		r = ft_strlen(dst) + ft_strlen(src);

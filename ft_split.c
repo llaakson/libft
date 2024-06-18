@@ -6,7 +6,7 @@
 /*   By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 21:10:39 by llaakson          #+#    #+#             */
-/*   Updated: 2024/05/08 17:10:02 by llaakson         ###   ########.fr       */
+/*   Updated: 2024/05/13 14:56:40 by llaakson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ char	**ft_split(char const *s, char c)
 	char	**arr;
 	int		j;
 
+	if (!s)
+		return (NULL);
 	j = array_counter(s, c);
 	arr = (char **)malloc(sizeof(char *) * (j + 1));
 	if (arr == NULL)

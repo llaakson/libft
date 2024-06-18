@@ -6,7 +6,7 @@
 #    By: llaakson <llaakson@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/03 14:22:44 by llaakson          #+#    #+#              #
-#    Updated: 2024/05/10 22:39:00 by llaakson         ###   ########.fr        #
+#    Updated: 2024/05/14 14:10:09 by llaakson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ clean:
 	rm -f $(OBJECTS) $(OBJECTSBONUS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME)	.bonus
 
 re: fclean all
 
